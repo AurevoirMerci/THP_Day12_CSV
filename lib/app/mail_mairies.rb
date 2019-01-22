@@ -32,23 +32,34 @@ def save_as_JSON(get_townhall_urls)
     end
 end
 
-def save_as_spreadsheet(get_townhall_urls)
-    session = GoogleDrive::Session.from_config("config.json")
-    ws = session.spreadsheet_by_key("1Z3bJYVtkvbXnXamrD7GRFw9uak1i4aUha-69bhrIaPU").worksheets[0]
-end
+#def save_as_spreadsheet(get_townhall_urls)
+#    session = GoogleDrive::Session.from_config("config.json")
+#    ws = session.spreadsheet_by_key("1Z3bJYVtkvbXnXamrD7GRFw9uak1i4aUha-69bhrIaPU").worksheets[0]
+#    
+#    array_cities_emails_spreadsheet = get_townhall_urls 
+#    i = 1
+#
+#    array_cities_emails_spreadsheet.each do |x|
+#    ws[i, 1] = x.keys.join
+#    ws[i, 2] = x.values.join
+#    ws.save
+#    i += 1
+#    end
+#end
 
 def save_as_csv(get_townhall_urls)
+
     CSV.open("db/emails.csv", "wb") do |f|
     get_townhall_urls.each do |ou|
-    f << ou.keys << ou.values
-    end
-    end
+    f << [ou.keys.join, ou.values.join]
+    end 
+    end 
 end
 
 def perform 
     get_townhall_urls
     save_as_JSON(get_townhall_urls)
-    save_as_spreadsheet(get_townhall_urls)
+    #save_as_spreadsheet(get_townhall_urls)
     save_as_csv(get_townhall_urls)
 end
 
