@@ -1,6 +1,7 @@
 # Ici sont mis les require nécessaires à la réalisation du projet
 require 'rubygems'
 require 'open-uri'
+require 'nokogiri'
 require 'json'
 require 'google_drive'
 require 'csv'
