@@ -2,7 +2,7 @@ Voici notre repository pour le projet THP Day 12.
 Ce projet consistait à sauvegarder des données que nous scrapons avec 3 méthodes différentes : 
 
 - format .JSON : très simple mais pas très efficace pour l'utiliser
-- format Spreadsheet : plus compliqué mais simple à partager avec son équipe
+- format Spreadsheet : plus compliqué mais simple à partager avec son équipe : https://docs.google.com/spreadsheets/d/1Z3bJYVtkvbXnXamrD7GRFw9uak1i4aUha-69bhrIaPU/edit#gid=0
 - format CSV : simple et très efficace pour utiliser les données
 
 Pour trouver l'intégralité de notre code : 
