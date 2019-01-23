@@ -50,13 +50,15 @@ def save_as_spreadsheet(get_townhall_urls)
     
   array_cities_emails_spreadsheet = get_townhall_urls 
   i = 1
-
+# On pourrait aussi utiliser each_with_index |x, i| pour ne pas à avoir à mettre le i = 1 et le i += 1.
   array_cities_emails_spreadsheet.each do |x|
     ws[i, 1] = x.keys.join
     ws[i, 2] = x.values.join
-    ws.save
     i += 1
   end
+  # Attention ne pas mettre ws.save dans la boucle each sinon cela va faire autant de demandes à 
+  # Google API qu'il y a de couples (keys, values)
+  ws.save 
 end
 
 # La méthode save_as_csv nous permet de créer / modifier un fichier
